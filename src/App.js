@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import axios from "axios";
 
 function App() {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [repoPath, setRepoPath] = useState("");
+
+  const handleSubmit = async () => {
+    try {
+      await axios.post("http://localhost:5000/schedule-commit", {
+        username,
+        email,
+        repoPath,
+      });
+      alert("Commit scheduled successfully!");
+    } catch (error) {
+      console.error("Error scheduling commit:", error);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>GitHub Commit Bot</h1>
+      <input
+        type="text"
+        placeholder="GitHub Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        type="email"
+        placeholder="GitHub Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Repository Path"
+        value={repoPath}
+        onChange={(e) => setRepoPath(e.target.value)}
+      />
+      <button onClick={handleSubmit}>Schedule Commit</button>
     </div>
   );
 }
