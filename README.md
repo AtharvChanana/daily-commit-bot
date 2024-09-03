@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Daily Commit Bot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple bot that automatically makes a commit to your GitHub repository whenever the script runs. This guide will walk you through the steps to set up and use the bot, even if you're new to GitHub and Git.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Before you begin, make sure you have the following:
 
-### `npm start`
+1. **A GitHub Account**: If you don't have one, [sign up here](https://github.com/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Git Installed on Your System**: Download and install Git from [this link](https://git-scm.com/downloads). Follow the instructions for your operating system.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Step 1: Fork and Clone the Repository
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Fork the Repository**: Click the "Fork" button at the top right corner of the repository page on GitHub.
 
-### `npm run build`
+2. **Clone the Repository**:
+   - Open your terminal or command prompt.
+   - Run the following command to clone the repository to your local machine:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+     ```bash
+     git clone https://github.com/YOUR_USERNAME/daily-commit-bot.git
+     ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+     Replace `YOUR_USERNAME` with your GitHub username.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Step 2: Install Node.js and npm
 
-### `npm run eject`
+- **Download Node.js**: If you don't have Node.js installed, [download it from here](https://nodejs.org/).
+- **Install Node.js and npm**: Follow the installation instructions for your operating system. npm (Node Package Manager) comes bundled with Node.js.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Step 3: Install Project Dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Navigate to the Project Directory**:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   cd daily-commit-bot
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Install Dependencies: Run the following command to install the necessary packages:**
+    ```bash 
+    npm install
 
-## Learn More
+### Step 4: Configure the script
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Open the `server.js` file in your preferred code editor (e.g., VSCode, Sublime Text).**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Configure the following variables:**
+```bash 
+const username = "YOUR_GITHUB_USERNAME";
+const email = "YOUR_GITHUB_EMAIL";
+const repoPath = "YOUR_LOCAL_REPO_PATH"; // e.g., "D:/Projects/daily-commit-bot"
+```
+Replace the placeholders with your GitHub username, email, and the path to your local repository.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Step 5: Run the Script
+**After configuring the script, you're ready to run it:**
+```bash
+node server.js
