@@ -3,9 +3,9 @@ import path from "path";
 import fs from "fs";
 
 // Hardcoded configuration
-const username = "isha71"; // Replace with your GitHub username
-const email = "ishu.akjain@gmail.com"; // Replace with your GitHub email
-const repoPath = "D:/VapourEx/worldCapitalQuiz"; // Replace with your repository path
+const username = "Atharvv-1"; // Replace with your GitHub username
+const email = "raaghav5616@gmail.com"; // Replace with your GitHub email
+const repoPath = "/Users/raghavchanana/desktop/repo/daily-commit-bot"; // Replace with your repository path
 
 const main = async () => {
   const git = simpleGit(repoPath);
